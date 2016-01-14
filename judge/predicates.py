@@ -9,8 +9,8 @@ otherwise = lambda *args, **kwargs: True
 
 # types
 
-instancechecker = lambda y: lambda x: isinstance(x, y)
-subclasschecker = lambda y: lambda x: issubclass(x, y)
+instancechecker = lambda cls: lambda x: isinstance(x, cls)
+subclasschecker = lambda cls: lambda x: issubclass(x, cls)
 
 is_string = lambda x: isinstance(x, basestring)
 is_number = lambda x: isinstance(x, numbers.Number)
