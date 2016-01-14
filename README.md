@@ -1,6 +1,9 @@
 judge
 =====
 
+[![Build Status](https://travis-ci.org/despawnerer/judge.svg?branch=master)](https://travis-ci.org/despawnerer/judge)
+[![PyPI version](https://badge.fury.io/py/judge.svg)](https://badge.fury.io/py/judge)
+
 `judge` is a Python library for choosing values based on a tree of conditions.
 
 For example:
