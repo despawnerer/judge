@@ -4,13 +4,13 @@ from functools import partial
 __all__ = ['decide', 'rules', 'NoMatchingRule']
 
 
-def decide(rules_list, *args, **kwargs):
-    assert isinstance(rules_list, rules)
+def decide(rules_obj, *args, **kwargs):
+    assert isinstance(rules_obj, rules)
 
     if not args and not kwargs:
-        return partial(decide, rules_list)
+        return partial(decide, rules_obj)
 
-    for predicate, value in rules_list:
+    for predicate, value in rules_obj:
         matches = predicate(*args, **kwargs)
         if matches:
             if isinstance(value, rules):
