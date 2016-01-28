@@ -43,11 +43,20 @@ class rules(object):
     rules object.
     """
     def __init__(self, *rules):
-        self.__rules = rules
+        self._rules = rules
 
     def __iter__(self):
-        for rule in self.__rules:
+        for rule in self._rules:
             yield rule
+
+    def __len__(self):
+        return len(self._rules)
+
+    def __add__(self, other):
+        if isinstance(other, rules):
+            return rules(*(self._rules + other._rules))
+        else:
+            raise NotImplementedError
 
 
 class NoMatchingRule(Exception):
