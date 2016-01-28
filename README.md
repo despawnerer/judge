@@ -42,6 +42,8 @@ judge.decide(rules_obj, *args, **kwargs)
 
 Return first matching value from `rules_obj` by invoking each predicate within it with `*args, **kwargs` until a match is found. `rules_obj` must be an instance of `rules`.
 
+If a non-rules object is passed as `rules_obj`, raise TypeError.
+
 If no match is found, raise `NoMatchingRule`.
 
 If no arguments are passed, then return a partially applied function that can be later used to choose a value using a the given set of rules.

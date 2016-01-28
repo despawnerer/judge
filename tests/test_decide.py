@@ -34,7 +34,7 @@ class DecideTestCase(TestCase):
             decide(self.positivity_rules, 0)
 
     def test_non_rules_objects_as_rules(self):
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(TypeError):
             decide(['something', 'whatever'], 20)
 
     def test_partial_application(self):
