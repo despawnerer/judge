@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='judge',
-    version='0.1.0',
+    version='0.2.0',
     description='Choose values based on a tree of conditions',
     url='https://github.com/despawnerer/judge',
     author='Aleksei Voronov',
