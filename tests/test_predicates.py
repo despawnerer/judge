@@ -12,6 +12,8 @@ from judge.predicates import (
     le,
     contains,
     divisible_by,
+    starts_with,
+    ends_with,
 )
 
 
@@ -77,6 +79,11 @@ class CollectionsTestCase(TestCase):
         self.assertTrue(checker([0, 10, 20]))
         self.assertFalse(checker([30, 40, 50]))
 
+    def test_contains_string(self):
+        checker = contains('bar')
+        self.assertTrue(checker('foo_bar_baz'))
+        self.assertFalse(checker('abc_def_ghi'))
+
 
 class MathTestCase(TestCase):
     def test_divisible_by_single_number(self):
@@ -89,3 +96,15 @@ class MathTestCase(TestCase):
         self.assertTrue(div3and5(15))
         self.assertFalse(div3and5(3))
         self.assertFalse(div3and5(5))
+
+
+class StringTestCase(TestCase):
+    def test_starts_with(self):
+        starts_here = starts_with('here')
+        self.assertTrue(starts_here('here i am'))
+        self.assertFalse(starts_here('there he is'))
+
+    def test_ends_with(self):
+        ends_now = ends_with('now')
+        self.assertTrue(ends_now('this ends now'))
+        self.assertFalse(ends_now('this doesnt end'))

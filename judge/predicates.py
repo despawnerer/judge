@@ -43,3 +43,9 @@ contains = lambda y: lambda x: y in x
 # math
 
 divisible_by = lambda *ys: lambda x: all(x % y == 0 for y in ys)
+
+
+# strings
+
+starts_with = lambda sub: lambda s: s.startswith(sub)
+ends_with = lambda sub: lambda s: s.endswith(sub)

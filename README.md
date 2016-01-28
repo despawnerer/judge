@@ -113,6 +113,14 @@ Predicate              | Matches
 `divisible_by(*ys)`    | Numbers that are divisible by all of the given divisors `ys`
 
 
+### Strings
+
+Predicate              | Matches
+:----------------------|:-----------------------------------------------
+`starts_with(sub)`     | `value.startswith(sub)`
+`ends_with(sub)`       | `value.endswith(sub)`
+
+
 Examples
 --------
 
